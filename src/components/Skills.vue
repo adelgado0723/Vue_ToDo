@@ -5,6 +5,7 @@
         <li v-for="(data, index) in skills" :key="index">{{ index }}. {{ data.skill }}</li>
       </ul>
     </div>
+    <div v-bind:class="{ alert: showAlert }"></div>
   </div>
 </template>
 
@@ -14,6 +15,7 @@ export default {
   data() {
     return {
       skills: [{ skill: 'Vue.js' }, { skill: 'Frontend Developer' }],
+      showAlert: true,
       name: 'Andy Knight',
       btnState: true,
     };
@@ -22,5 +24,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style src="./Skills.css"scoped>
+<style scoped>
+.alert {
+}
 </style>
